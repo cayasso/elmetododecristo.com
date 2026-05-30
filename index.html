@@ -1424,14 +1424,23 @@
     `;
   }
 
+  // Walks up the offsetParent chain to get the element's true document Y.
+  // We can't use getBoundingClientRect here because once the sticky bar
+  // is stuck to the viewport top, its rect.top is 0 — scrolling to that
+  // value would do nothing. offsetTop returns the natural in-flow position,
+  // which is what we actually want to scroll to.
+  function documentTopOf(el) {
+    let y = 0;
+    while (el) { y += el.offsetTop; el = el.offsetParent; }
+    return y;
+  }
+
   // Scrolls so the sticky tab bar lines up at the top of viewport.
   // This guarantees the new panel content starts right below the tabs —
   // user never has to scroll up to switch topics, never lands in the middle.
   function scrollTabsToTop() {
     if (!needsTabsWrap) return;
-    const rect = needsTabsWrap.getBoundingClientRect();
-    const target = window.scrollY + rect.top - 0;
-    window.scrollTo({ top: target, behavior: 'smooth' });
+    window.scrollTo({ top: documentTopOf(needsTabsWrap), behavior: 'smooth' });
   }
 
   function setPillar(i, { instant = false, scroll = true } = {}) {
@@ -1648,8 +1657,7 @@
 
   function scrollStepTabsToTop() {
     if (!stepTabsWrap) return;
-    const rect = stepTabsWrap.getBoundingClientRect();
-    window.scrollTo({ top: window.scrollY + rect.top, behavior: 'smooth' });
+    window.scrollTo({ top: documentTopOf(stepTabsWrap), behavior: 'smooth' });
   }
 
   function setStep(i, { instant = false, scroll = true } = {}) {
