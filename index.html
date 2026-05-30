@@ -1,0 +1,1930 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>El Método de Cristo · Evangelismo Modular</title>
+<meta name="description" content="Los cuatro pasos del método de Cristo: Contacto, Confianza, Convicción, Comisión. Un plan para testificar con simpatía, ganando confianza y compartiendo la Palabra." />
+<meta name="theme-color" content="#060d14" />
+
+<meta property="og:title" content="El Método de Cristo" />
+<meta property="og:description" content="Contacto · Confianza · Convicción · Comisión. El plan de Jesús para alcanzar corazones." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://elmetododecristo.com" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          deep:      '#060d14',
+          mid:       '#0d1b2a',
+          elev:      '#111a24',
+          gold:      '#d4a843',
+          goldwarm:  '#c67b30',
+          cream:     '#f5e6c8',
+        },
+        fontFamily: {
+          display:  ['Cinzel', 'serif'],
+          serif:    ['"Cormorant Garamond"', 'Georgia', 'serif'],
+          sans:     ['Inter', 'system-ui', 'sans-serif'],
+        },
+        boxShadow: {
+          gold: '0 0 60px -15px rgba(212,168,67,0.45)',
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html {
+    /* Bump base size 16 → 18px so all rem-based type scales up */
+    font-size: 18px;
+  }
+  @media (max-width: 640px) {
+    html { font-size: 17px; }
+  }
+  html, body {
+    background: #060d14;
+    color: #f5e6c8;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ── Hero background stack ───────────────────────────────────── */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 130% 80% at 50% -10%,
+        #ffd770 0%,
+        #e8a838 10%,
+        #b97a28 22%,
+        #4a3a2a 38%,
+        #1a2438 55%,
+        #0a121c 75%,
+        #060d14 100%);
+  }
+  /* Heavenly sunburst — top-center bright halo */
+  .sun-halo {
+    position: absolute;
+    top: -22%;
+    left: 50%;
+    width: 1500px;
+    max-width: 180%;
+    height: 1000px;
+    transform: translateX(-50%);
+    background:
+      radial-gradient(ellipse 50% 55% at 50% 50%,
+        rgba(255,245,200,0.95) 0%,
+        rgba(255,215,112,0.75) 8%,
+        rgba(245,180,70,0.45) 18%,
+        rgba(212,168,67,0.22) 32%,
+        rgba(212,168,67,0.08) 48%,
+        transparent 65%);
+    filter: blur(10px);
+    pointer-events: none;
+    animation: heroPulse 9s ease-in-out infinite alternate;
+  }
+  /* Radiating sun rays (subtle conic pattern fanning down from top) */
+  .sun-rays {
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    width: 1800px;
+    max-width: 220%;
+    height: 1400px;
+    transform: translateX(-50%);
+    background: repeating-conic-gradient(from 195deg at 50% 0%,
+      rgba(255,230,160,0.0)  0deg,
+      rgba(255,230,160,0.0)  3deg,
+      rgba(255,225,150,0.16) 4deg,
+      rgba(255,225,150,0.16) 5deg,
+      rgba(255,230,160,0.0)  6deg,
+      rgba(255,230,160,0.0) 11deg);
+    -webkit-mask-image: radial-gradient(ellipse 60% 90% at 50% 0%, black 10%, transparent 70%);
+            mask-image: radial-gradient(ellipse 60% 90% at 50% 0%, black 10%, transparent 70%);
+    opacity: 0.7;
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+  .hero-glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 85%, rgba(198,123,48,0.06), transparent 50%);
+    animation: heroPulse 9s ease-in-out infinite alternate;
+  }
+  @keyframes heroPulse {
+    from { opacity: 0.85; }
+    to   { opacity: 1;    }
+  }
+
+  /* ── Starfield ───────────────────────────────────────────────── */
+  .starfield { position: absolute; inset: 0; }
+  .star {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: #f5e6c8;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 5s ease-in-out infinite;
+    box-shadow: 0 0 6px 1px rgba(245,230,200,0.4);
+  }
+  .star.big   { width: 3px; height: 3px; box-shadow: 0 0 10px 2px rgba(212,168,67,0.55); background: #d4a843; }
+  .star.tiny  { width: 1px; height: 1px; box-shadow: none; }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0;    transform: scale(0.6); }
+    50%      { opacity: 0.9;  transform: scale(1);   }
+  }
+
+  /* ── Light beams ─────────────────────────────────────────────── */
+  .beam {
+    position: absolute;
+    top: -10%;
+    width: 220px; height: 130%;
+    background: linear-gradient(180deg, rgba(212,168,67,0.18), transparent 70%);
+    filter: blur(40px);
+    transform-origin: top center;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  /* ── Gold divider ────────────────────────────────────────────── */
+  .gold-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,168,67,0.55), transparent);
+  }
+
+  /* ── Section reveal animation ────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 900ms cubic-bezier(.2,.7,.2,1), transform 900ms cubic-bezier(.2,.7,.2,1);
+    will-change: opacity, transform;
+  }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+  /* ── 4-step navigator — interlocking nodes + segment lines ───── */
+  /* Lines sit BETWEEN nodes (not behind), so they never bleed through circles */
+  .stepper {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .step-line-seg {
+    flex: 1;
+    height: 2px;
+    margin-top: 27px;  /* aligns to vertical center of 56px circle */
+    background: rgba(245,230,200,0.18);
+    border-radius: 2px;
+    min-width: 16px;
+    transition: background 500ms cubic-bezier(.65,.05,.36,1),
+                box-shadow 500ms ease;
+  }
+  .step-line-seg.is-done {
+    background: linear-gradient(90deg, #c67b30, #d4a843);
+    box-shadow: 0 0 12px rgba(212,168,67,0.45);
+  }
+  .step-cell { flex-shrink: 0; }
+  .step-btn {
+    position: relative;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(245,230,200,0.28);
+    background: #0d1b2a;  /* solid — matches section bg, hides any underlying line */
+    color: rgba(245,230,200,0.6);
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: grid; place-items: center;
+    cursor: pointer;
+    transition: all 350ms cubic-bezier(.2,.7,.2,1);
+  }
+  @media (max-width: 480px) {
+    .step-btn { width: 46px; height: 46px; font-size: 0.95rem; }
+    .step-line-seg { margin-top: 22px; min-width: 8px; }
+  }
+  .step-btn:hover { color: #f5e6c8; border-color: rgba(212,168,67,0.55); }
+  .step-btn.is-done {
+    border-color: rgba(212,168,67,0.6);
+    color: #d4a843;
+  }
+  .step-btn.is-active {
+    border-color: #d4a843;
+    color: #060d14;
+    background: linear-gradient(135deg, #f0c862, #d4a843);
+    box-shadow: 0 0 0 6px rgba(212,168,67,0.12), 0 0 40px rgba(212,168,67,0.45);
+    transform: scale(1.08);
+  }
+  .step-btn:focus-visible {
+    outline: 2px solid #d4a843;
+    outline-offset: 4px;
+  }
+  .step-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245,230,200,0.5);
+    transition: color 350ms;
+    text-align: center;
+    margin-top: 14px;
+  }
+  .step-cell.is-active .step-label { color: #d4a843; }
+
+  /* ── Step detail panel ───────────────────────────────────────── */
+  .step-panel {
+    position: relative;
+    background: transparent;
+    border: 1px solid rgba(212,168,67,0.18);
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .step-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 400ms, transform 400ms;
+  }
+  .step-content.is-leaving {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  /* ── Step icon orb ───────────────────────────────────────────── */
+  .step-orb {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid rgba(212,168,67,0.45);
+    display: grid; place-items: center;
+    color: #d4a843;
+  }
+
+  /* ── Three pillars (necesita el cristiano) ───────────────────── */
+  /* ── Lo que necesita el cristiano — sticky tabs + learning panel ─ */
+  /* Sticky bar: transparent + backdrop blur so it inherits whichever
+     section it's in (bg-deep / bg-mid). At rest it's invisible; when
+     content scrolls behind it the blur turns it into frosted glass. */
+  .needs-tabs-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    padding: 14px 0 16px;
+    margin-bottom: 28px;
+    background: transparent;
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+            backdrop-filter: blur(16px) saturate(140%);
+  }
+  /* Fallback for browsers without backdrop-filter: faint tint so scrolled
+     content doesn't visibly show through the sticky bar */
+  @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+    .needs-tabs-wrap { background: rgba(6, 13, 20, 0.82); }
+  }
+  .needs-tabs {
+    display: flex;
+    gap: 6px;
+    padding: 6px;
+    border-radius: 999px;
+    background: rgba(13,27,42,0.6);
+    border: 1px solid rgba(245,230,200,0.1);
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .needs-tab {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 11px 8px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: rgba(245,230,200,0.6);
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: all 280ms cubic-bezier(.2,.7,.2,1);
+    white-space: nowrap;
+    line-height: 1.2;
+    text-align: center;
+  }
+  @media (min-width: 640px) {
+    .needs-tab { font-size: 0.88rem; padding: 12px 14px; letter-spacing: 0.04em; }
+  }
+  .needs-tab:hover { color: #f5e6c8; }
+  .needs-tab.is-active {
+    background: linear-gradient(180deg, #f0c862, #d4a843);
+    color: #060d14;
+    box-shadow: 0 6px 24px -6px rgba(212,168,67,0.55);
+  }
+  .needs-tab:focus-visible {
+    outline: 2px solid #d4a843;
+    outline-offset: 3px;
+  }
+  /* Step indicator under tabs (e.g. "Práctica 1 de 3") */
+  .needs-counter {
+    text-align: center;
+    margin-top: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(245,230,200,0.45);
+  }
+  .needs-counter strong { color: #d4a843; font-weight: 600; }
+
+  .needs-panel {
+    position: relative;
+    padding: 32px 28px;
+    border: 1px solid rgba(212,168,67,0.18);
+    border-radius: 22px;
+    background: rgba(13,27,42,0.4);
+  }
+  @media (min-width: 640px) {
+    .needs-panel { padding: 48px 44px; }
+  }
+  .needs-content {
+    transition: opacity 250ms, transform 250ms;
+  }
+  .needs-content.is-leaving {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  .needs-panel-verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+    line-height: 1.5;
+    color: #f5e6c8;
+  }
+  .needs-panel-ref {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: #d4a843;
+    margin-top: 10px;
+  }
+  .needs-panel-name {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    color: #f5e6c8;
+    line-height: 1.1;
+    margin: 28px 0 18px;
+    letter-spacing: 0.01em;
+  }
+  .needs-panel-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: rgba(245,230,200,0.85);
+    max-width: 60ch;
+  }
+  .needs-section-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: #d4a843;
+    margin: 40px 0 18px;
+  }
+  .needs-section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(212,168,67,0.4), transparent);
+  }
+  .needs-pasos {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .needs-paso {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 18px;
+    padding: 18px 0;
+    border-top: 1px solid rgba(245,230,200,0.08);
+  }
+  .needs-paso:first-child { border-top: 0; }
+  .needs-paso-num {
+    font-family: 'Cinzel', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #d4a843;
+    line-height: 1;
+    padding-top: 2px;
+  }
+  .needs-paso-titulo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #f5e6c8;
+    margin: 0 0 6px;
+    letter-spacing: 0.02em;
+  }
+  .needs-paso-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.18rem;
+    line-height: 1.55;
+    color: rgba(245,230,200,0.78);
+    margin: 0;
+  }
+  .needs-verses {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .needs-verse-item {
+    padding: 18px 22px;
+    background: rgba(212,168,67,0.05);
+    border-left: 2px solid rgba(212,168,67,0.5);
+    border-radius: 0 10px 10px 0;
+  }
+  .needs-verse-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.18rem;
+    line-height: 1.55;
+    color: rgba(245,230,200,0.88);
+    margin: 0;
+  }
+  .needs-verse-ref {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #d4a843;
+  }
+  .needs-reflexion {
+    margin-top: 36px;
+    padding: 26px 28px;
+    border: 1px solid rgba(212,168,67,0.25);
+    border-radius: 16px;
+    background: rgba(212,168,67,0.04);
+  }
+  .needs-reflexion-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #d4a843;
+    margin-bottom: 12px;
+  }
+  .needs-reflexion-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.55;
+    color: #f5e6c8;
+    margin: 0;
+  }
+
+  /* Foundational Ministerio de Curación quote — sits as panel epigraph */
+  .step-epigraph {
+    position: relative;
+    text-align: center;
+    padding: 6px 16px 28px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid rgba(212,168,67,0.18);
+  }
+  .step-epigraph-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(245,230,200,0.45);
+    margin-bottom: 14px;
+  }
+  .step-epigraph-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+    line-height: 1.55;
+    color: rgba(245,230,200,0.92);
+    max-width: 36ch;
+    margin: 0 auto;
+  }
+  .step-epigraph-text::before {
+    content: "\201C";
+    color: #d4a843;
+    font-size: 1.5em;
+    line-height: 0;
+    margin-right: 0.06em;
+    vertical-align: -0.22em;
+  }
+  .step-epigraph-text::after {
+    content: "\201D";
+    color: #d4a843;
+    font-size: 1.5em;
+    line-height: 0;
+    margin-left: 0.06em;
+    vertical-align: -0.22em;
+  }
+  .step-epigraph-source {
+    margin-top: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: #d4a843;
+  }
+
+  /* ── Hechos / Acts ───────────────────────────────────────────── */
+  .horizon-bg { background: #060d14; }
+  .scripture-quote {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+    line-height: 1.6;
+    color: rgba(245,230,200,0.92);
+  }
+
+  /* ── Video lite-embed ────────────────────────────────────────── */
+  .video-frame {
+    position: relative;
+    border-radius: 20px;
+    border: 1px solid rgba(212,168,67,0.3);
+    box-shadow: 0 0 60px -15px rgba(212,168,67,0.4), 0 30px 80px -40px rgba(0,0,0,0.95);
+    overflow: hidden;
+    background: #060d14;
+  }
+  .video-thumb {
+    width: 100%; aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+    transition: transform 600ms ease, filter 600ms ease;
+  }
+  .video-frame:hover .video-thumb { transform: scale(1.02); filter: brightness(1.08); }
+  .video-play {
+    position: absolute; inset: 0;
+    display: grid; place-items: center;
+    cursor: pointer;
+    background: linear-gradient(180deg, rgba(6,13,20,0.05) 0%, rgba(6,13,20,0.55) 100%);
+  }
+  .video-play-btn {
+    width: 92px; height: 92px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f0c862, #d4a843);
+    display: grid; place-items: center;
+    box-shadow: 0 0 0 10px rgba(212,168,67,0.15), 0 0 60px rgba(212,168,67,0.55);
+    transition: transform 350ms ease;
+  }
+  .video-play:hover .video-play-btn { transform: scale(1.08); }
+
+  /* ── CTA glow button ─────────────────────────────────────────── */
+  .cta-link {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    padding: 0.9rem 1.6rem;
+    border: 1px solid rgba(212,168,67,0.5);
+    border-radius: 999px;
+    color: #d4a843;
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: rgba(212,168,67,0.04);
+    transition: all 300ms ease;
+  }
+  .cta-link:hover {
+    background: rgba(212,168,67,0.12);
+    border-color: #d4a843;
+    box-shadow: 0 0 30px rgba(212,168,67,0.35);
+  }
+
+  /* ── Reduced motion ──────────────────────────────────────────── */
+  @media (prefers-reduced-motion: reduce) {
+    .star, .hero-glow, .beam { animation: none !important; }
+    .reveal { transition: none; opacity: 1; transform: none; }
+  }
+
+  /* ── Down chevron bounce ─────────────────────────────────────── */
+  .chevron-bounce { animation: bounce 2.2s ease-in-out infinite; }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(8px); }
+  }
+
+  /* ════════════════════════════════════════════════════════════
+     EVANGELISMO MODULAR — light "study mode" section
+  ════════════════════════════════════════════════════════════ */
+  .study-section {
+    background:
+      radial-gradient(ellipse 100% 60% at 50% 0%, #fbf5e2 0%, #f4ebd0 60%, #ece1bb 100%);
+    color: #1a1208;
+  }
+  /* faint parchment grain — barely-there texture */
+  .study-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 25% 30%, rgba(184,145,30,0.04) 0%, transparent 50%),
+      radial-gradient(circle at 75% 70%, rgba(184,145,30,0.03) 0%, transparent 55%);
+    pointer-events: none;
+  }
+  .study-rule {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(184,145,30,0.5), transparent);
+  }
+
+  /* Filter chips (light variant) */
+  .chip {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 9px 16px;
+    border: 1px solid rgba(26,18,8,0.14);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.5);
+    color: #4a3a22;
+    cursor: pointer;
+    transition: all 200ms ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .chip:hover {
+    color: #1a1208;
+    border-color: rgba(184,145,30,0.55);
+    background: rgba(255,255,255,0.85);
+  }
+  .chip.is-active {
+    background: #1a1208;
+    border-color: #1a1208;
+    color: #f5e6c8;
+  }
+  .chip-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--chip-color, #b8911e);
+  }
+
+  /* Stat strip above accordion */
+  .study-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 24px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(26,18,8,0.08);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #4a3a22;
+  }
+  .study-stats strong {
+    color: #1a1208;
+    font-weight: 600;
+  }
+  .study-stats .study-stats-sep {
+    width: 1px;
+    height: 14px;
+    background: rgba(26,18,8,0.15);
+  }
+
+  /* Module accordion */
+  .modulo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .modulo-item {
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(26,18,8,0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 250ms ease;
+  }
+  .modulo-item:hover {
+    border-color: rgba(184,145,30,0.35);
+    background: rgba(255,255,255,0.78);
+  }
+  .modulo-item.is-open {
+    border-color: rgba(184,145,30,0.5);
+    background: #fffdf5;
+    box-shadow: 0 8px 28px -12px rgba(26,18,8,0.18);
+  }
+  .modulo-item.is-muted {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .modulo-header {
+    width: 100%;
+    padding: 22px 26px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 64px 1fr auto auto;
+    align-items: center;
+    gap: 22px;
+    text-align: left;
+    color: inherit;
+    font: inherit;
+  }
+  .modulo-header:focus-visible {
+    outline: 2px solid #b8911e;
+    outline-offset: -2px;
+  }
+  .modulo-num {
+    font-family: 'Cinzel', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #b8911e;
+    text-align: center;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+  .modulo-text { min-width: 0; }
+  .modulo-cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #6a5a3f;
+    margin-bottom: 5px;
+  }
+  .modulo-cat::before {
+    content: "";
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--cat-color, #b8911e);
+  }
+  .modulo-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1208;
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+  }
+  .modulo-lessons {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #6a5a3f;
+    white-space: nowrap;
+  }
+  .modulo-chevron {
+    color: #8a7654;
+    transition: transform 300ms cubic-bezier(.2,.7,.2,1);
+  }
+  .modulo-item.is-open .modulo-chevron { transform: rotate(180deg); color: #b8911e; }
+
+  /* Accordion body — grid 0fr → 1fr trick */
+  .modulo-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 360ms cubic-bezier(.2,.7,.2,1);
+  }
+  .modulo-item.is-open .modulo-body { grid-template-rows: 1fr; }
+  .modulo-body-inner {
+    overflow: hidden;
+    min-height: 0;
+  }
+  .modulo-body-pad {
+    padding: 4px 26px 28px 112px;
+  }
+  .modulo-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #2a1f10;
+    margin-bottom: 22px;
+    max-width: 62ch;
+  }
+  .lecciones {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .leccion {
+    padding: 18px 22px;
+    background: rgba(244,235,208,0.55);
+    border-left: 3px solid var(--cat-color, #b8911e);
+    border-radius: 0 8px 8px 0;
+  }
+  .leccion-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #6a5a3f;
+  }
+  .leccion-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1a1208;
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+  .leccion-verse {
+    margin: 14px 0 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.18rem;
+    color: #2a1f10;
+    line-height: 1.55;
+  }
+  .leccion-ref {
+    display: inline-block;
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cat-color, #b8911e);
+  }
+
+  @media (max-width: 640px) {
+    .modulo-header {
+      grid-template-columns: 52px 1fr auto;
+      gap: 14px;
+      padding: 18px 18px;
+    }
+    .modulo-num { font-size: 1.6rem; }
+    .modulo-title { font-size: 1.1rem; }
+    .modulo-lessons { display: none; }
+    .modulo-body-pad { padding: 4px 18px 22px 84px; }
+    .modulo-intro { font-size: 1.15rem; }
+    .leccion { padding: 16px 18px; }
+    .leccion-title { font-size: 1.02rem; }
+    .leccion-verse { font-size: 1.08rem; }
+  }
+</style>
+</head>
+<body class="font-serif">
+
+<!-- ════════════════════════════════════════════════════════════════
+     HERO
+═════════════════════════════════════════════════════════════════ -->
+<header class="relative min-h-screen flex flex-col">
+  <div class="hero-bg">
+    <div class="sun-rays"></div>
+    <div class="sun-halo"></div>
+    <div class="starfield" id="starfield"></div>
+    <div class="hero-glow"></div>
+  </div>
+
+  <div class="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 pt-32 sm:pt-40 pb-20">
+    <div class="text-[13px] sm:text-sm font-sans tracking-[0.32em] uppercase text-gold/85 mb-6 flex items-center gap-3">
+      <span class="inline-block w-8 h-px bg-gold/60"></span>
+      Evangelismo Modular · Iglesia La Aurora
+      <span class="inline-block w-8 h-px bg-gold/60"></span>
+    </div>
+
+    <h1 class="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.95] text-cream tracking-wide">
+      El <span class="text-gold drop-shadow-[0_0_30px_rgba(212,168,67,0.35)]">Método</span><br/>
+      <span class="italic font-medium text-cream/95">de Cristo</span>
+    </h1>
+
+    <div class="mt-10 max-w-2xl">
+      <p class="font-serif italic text-xl sm:text-2xl md:text-2xl text-cream/85 leading-relaxed">
+        &ldquo;El Salvador trataba con los hombres como quien deseaba hacerles bien.
+        Les mostraba simpatía, atendía a sus necesidades y se ganaba su confianza.
+        Entonces les decía: <span class="text-gold not-italic font-semibold">‘Seguidme.’</span>&rdquo;
+      </p>
+      <div class="mt-4 text-[13px] font-sans tracking-[0.28em] uppercase text-cream/40">
+        Ministerio de Curación
+      </div>
+    </div>
+
+    <a href="#pasos" class="mt-16 group inline-flex items-center gap-3 text-cream/60 hover:text-gold transition-colors">
+      <span class="font-sans text-sm tracking-[0.3em] uppercase">Descubre los cuatro pasos</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M6 9l6 6 6-6"/>
+      </svg>
+    </a>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════════════════════════════
+     LO QUE NECESITA EL CRISTIANO
+═════════════════════════════════════════════════════════════════ -->
+<section class="relative py-24 sm:py-32 px-6 bg-deep">
+  <div class="absolute inset-x-0 top-0 gold-rule"></div>
+
+  <div id="needsSection" class="max-w-3xl mx-auto reveal">
+    <div class="text-center mb-12">
+      <div class="font-sans text-[13px] tracking-[0.32em] uppercase text-gold/80 mb-4">
+        Antes de testificar
+      </div>
+      <h2 class="font-display text-4xl sm:text-5xl text-cream mb-5">
+        Lo que <span class="text-gold">necesita</span> el cristiano
+      </h2>
+      <p class="font-serif italic text-xl sm:text-2xl text-cream/75 max-w-2xl mx-auto leading-relaxed">
+        Tres prácticas que preparan el corazón del testigo.
+      </p>
+    </div>
+
+    <!-- Sticky tab navigator — always reachable, no scroll-up needed -->
+    <div id="needsTabsWrap" class="needs-tabs-wrap">
+      <div id="needsNav" class="needs-tabs" role="tablist" aria-label="Tres prácticas del cristiano">
+        <!-- injected -->
+      </div>
+      <div class="needs-counter">
+        Práctica <strong id="needsCounter">1</strong> de 3
+      </div>
+    </div>
+
+    <!-- Content panel — swaps in place -->
+    <article id="needsPanel" class="needs-panel" aria-live="polite">
+      <div id="needsContent" class="needs-content">
+        <!-- injected -->
+      </div>
+    </article>
+
+    <div class="mt-24 flex flex-col items-center">
+      <div class="h-16 w-px bg-gold/40"></div>
+      <div class="mt-6 font-display tracking-[0.3em] text-gold/90 text-base sm:text-lg">PARA TESTIFICAR</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     LOS CUATRO PASOS (interactive)
+═════════════════════════════════════════════════════════════════ -->
+<section id="pasos" class="relative py-24 sm:py-32 px-6 bg-mid">
+  <!-- ambient bg -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    <div class="absolute inset-0" style="background:
+      radial-gradient(ellipse at 20% 0%, rgba(212,168,67,0.10), transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(198,123,48,0.10), transparent 50%);"></div>
+  </div>
+
+  <div class="relative max-w-5xl mx-auto reveal">
+    <div class="text-center mb-12">
+      <div class="font-sans text-[13px] tracking-[0.32em] uppercase text-gold/80 mb-4">
+        Los cuatro pasos
+      </div>
+      <h2 class="font-display text-4xl sm:text-5xl text-cream">
+        El <span class="text-gold">camino</span> que Jesús trazó
+      </h2>
+      <p class="mt-6 max-w-2xl mx-auto font-serif text-xl text-cream/75 italic leading-relaxed">
+        Pulsa cada paso para descubrirlo.
+      </p>
+    </div>
+
+    <!-- Sticky stepper — always reachable while reading the panel -->
+    <div id="stepTabsWrap" class="needs-tabs-wrap">
+      <div id="stepNav" class="stepper" role="tablist" aria-label="Cuatro pasos del método de Cristo">
+        <!-- injected: cell · line · cell · line · cell · line · cell -->
+      </div>
+      <div class="needs-counter">
+        Paso <strong id="stepCounter">1</strong> de 4
+      </div>
+    </div>
+
+    <!-- Detail panel -->
+    <div class="step-panel max-w-3xl mx-auto p-8 sm:p-12">
+      <div id="stepContent" class="step-content">
+        <!-- injected -->
+      </div>
+
+      <div class="mt-10 flex items-center justify-between text-cream/50">
+        <button id="prevStep" class="flex items-center gap-2 font-sans text-[13px] tracking-[0.25em] uppercase hover:text-gold transition-colors disabled:opacity-30 disabled:hover:text-cream/50" aria-label="Paso anterior">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"/></svg>
+          Anterior
+        </button>
+        <button id="nextStep" class="flex items-center gap-2 font-sans text-[13px] tracking-[0.25em] uppercase hover:text-gold transition-colors disabled:opacity-30 disabled:hover:text-cream/50" aria-label="Paso siguiente">
+          Siguiente
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     EVANGELISMO MODULAR — 15 MÓDULOS · LA FE DE JESÚS
+     (light "study mode" — parchment, accordion, minimal)
+═════════════════════════════════════════════════════════════════ -->
+<section id="modular" class="study-section relative py-24 sm:py-32 px-6 overflow-hidden">
+  <div class="relative max-w-3xl mx-auto reveal">
+    <div class="text-center mb-12">
+      <div class="font-sans text-[13px] tracking-[0.32em] uppercase font-medium mb-4" style="color: #6a5a3f;">
+        Estudio Bíblico &middot; La Fe de Jesús
+      </div>
+      <h2 class="font-display text-3xl sm:text-5xl mb-3" style="color: #1a1208;">
+        Evangelismo <span style="color: #b8911e;" class="italic">Modular</span>
+      </h2>
+      <p class="font-serif italic text-xl sm:text-2xl" style="color: #3a2a18;">
+        Un paso a la vez.
+      </p>
+      <p class="mt-6 max-w-xl mx-auto font-serif text-lg leading-relaxed" style="color: #3a2a18;">
+        Quince módulos. Veinte lecciones. Un camino bíblico, ordenado, y completo.
+        Empieza por el primero &mdash; o elige el tema que más te llama.
+      </p>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="flex justify-center mb-8">
+      <div class="study-stats">
+        <span><strong>15</strong> módulos</span>
+        <span class="study-stats-sep"></span>
+        <span><strong>20</strong> lecciones</span>
+        <span class="study-stats-sep"></span>
+        <span><strong>1</strong> camino</span>
+      </div>
+    </div>
+
+    <!-- Filter chips (interest/category) -->
+    <div class="mb-4 text-center">
+      <p class="font-sans text-[13px] tracking-[0.22em] uppercase mb-3" style="color: #6a5a3f;">
+        Filtra por interés
+      </p>
+    </div>
+    <div id="modFilters" class="flex flex-wrap gap-2 justify-center mb-10" role="tablist" aria-label="Filtros por categoría">
+      <!-- injected -->
+    </div>
+
+    <div class="study-rule mb-10"></div>
+
+    <!-- Accordion list of modules -->
+    <div id="moduloList" class="modulo-list" role="list" aria-label="Quince módulos del estudio La Fe de Jesús">
+      <!-- injected -->
+    </div>
+
+    <p id="moduloEmpty" class="hidden text-center font-serif italic mt-10" style="color: #6a5a3f;">
+      No hay módulos en esta categoría todavía.
+    </p>
+
+    <div class="mt-16">
+      <div class="study-rule mb-10"></div>
+      <p class="text-center font-display tracking-[0.25em] text-sm" style="color: #b8911e;">
+        Mateo 28:18-20
+      </p>
+      <p class="mt-4 text-center font-serif italic max-w-xl mx-auto" style="color: #3a2a18;">
+        &ldquo;Por tanto, id, y haced discípulos a todas las naciones, bautizándolos
+        en el nombre del Padre, y del Hijo, y del Espíritu Santo; enseñándoles que
+        guarden todas las cosas que os he mandado.&rdquo;
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     HECHOS 8:26-35 — FELIPE Y EL ETÍOPE
+═════════════════════════════════════════════════════════════════ -->
+<section class="relative py-28 sm:py-36 px-6 horizon-bg overflow-hidden">
+  <div class="absolute inset-x-0 top-0 gold-rule"></div>
+
+  <div class="max-w-3xl mx-auto reveal text-center">
+    <div class="font-sans text-[13px] tracking-[0.32em] uppercase text-gold/80 mb-4">
+      Un retrato del método
+    </div>
+    <h2 class="font-display text-4xl sm:text-5xl text-cream mb-3">
+      Felipe y el <span class="text-gold">Etíope</span>
+    </h2>
+    <p class="font-sans text-[13px] tracking-[0.28em] uppercase text-cream/50 mb-12">Hechos 8:26-35</p>
+
+    <blockquote class="scripture-quote text-left mb-10">
+      Y el etíope dijo a Felipe: &ldquo;Te ruego que, si entiendes, te acerques y te sientes conmigo.&rdquo;
+      Entonces Felipe se acercó, y oyendo que leía al profeta Isaías, le dijo:
+      <span class="text-gold not-italic font-semibold">&ldquo;¿Entiendes lo que lees?&rdquo;</span>
+      &mdash; Comenzando desde esta escritura, le anunció el evangelio de Jesús.
+    </blockquote>
+
+    <div class="gold-rule my-10"></div>
+
+    <p class="font-serif text-xl sm:text-2xl text-cream/85 leading-relaxed">
+      Felipe <span class="text-gold font-semibold">vio</span> (Contacto),
+      corrió y <span class="text-gold font-semibold">se acercó</span> (Confianza),
+      <span class="text-gold font-semibold">explicó las Escrituras</span> (Convicción),
+      y <span class="text-gold font-semibold">bautizó</span> al nuevo discípulo (Comisión).
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     VIDEO
+═════════════════════════════════════════════════════════════════ -->
+<section class="relative py-24 sm:py-32 px-6 bg-deep">
+  <div class="absolute inset-x-0 top-0 gold-rule"></div>
+
+  <div class="max-w-3xl mx-auto reveal">
+    <div class="text-center mb-12">
+      <div class="font-sans text-[13px] tracking-[0.32em] uppercase text-gold/80 mb-4">
+        Mensaje en video
+      </div>
+      <h2 class="font-display text-4xl sm:text-5xl text-cream">
+        Mira el mensaje <span class="text-gold">completo</span>
+      </h2>
+      <p class="mt-5 max-w-xl mx-auto font-serif text-xl italic text-cream/75 leading-relaxed">
+        Una enseñanza para profundizar en el método de Cristo y aplicarlo en tu vida.
+      </p>
+    </div>
+
+    <div class="video-frame" id="videoFrame" data-video-id="NMf_mMneZeY">
+      <img
+        class="video-thumb"
+        src="ElMetodoDeCristoPortada.png"
+        alt="Portada: El Método de Cristo"
+        loading="lazy"
+      />
+      <button type="button" class="video-play" aria-label="Reproducir video">
+        <span class="video-play-btn">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="#060d14">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     CIERRE
+═════════════════════════════════════════════════════════════════ -->
+<section class="relative py-32 sm:py-40 px-6 bg-deep overflow-hidden">
+  <div class="relative max-w-2xl mx-auto text-center reveal">
+    <h2 class="font-display text-4xl sm:text-6xl text-cream leading-[1.1]">
+      ¿A quién Dios pone <br/>
+      <span class="text-gold italic">hoy</span> en tu camino?
+    </h2>
+    <p class="mt-10 font-serif text-2xl sm:text-3xl text-cream/85 italic leading-relaxed">
+      No esperes una vocación especial. Esta semana: un nombre, una oración, un encuentro.
+    </p>
+
+    <div class="mt-14 flex justify-center">
+      <button id="shareBtn" type="button" class="cta-link">
+        <span class="cta-link-label">Comparte el método</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12h14M13 6l6 6-6 6"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mt-24 gold-rule"></div>
+    <p class="mt-10 font-display text-sm sm:text-base tracking-[0.28em] text-gold/90 uppercase leading-relaxed">
+      Lecciones de la Historia &middot; Verdad para el Presente &middot; Esperanza para el Futuro
+    </p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════════
+     FOOTER
+═════════════════════════════════════════════════════════════════ -->
+<footer class="bg-deep py-12 px-6 text-center">
+  <p class="font-sans text-sm tracking-[0.22em] uppercase text-cream/50">
+    Iglesia La Aurora &middot; Plan Misionero
+  </p>
+  <p class="mt-2 font-sans text-sm text-cream/40">
+    elmetododecristo.com
+  </p>
+</footer>
+
+<!-- ════════════════════════════════════════════════════════════════
+     SCRIPTS
+═════════════════════════════════════════════════════════════════ -->
+<script>
+(() => {
+  // ── Starfield ─────────────────────────────────────────────────
+  const starfield = document.getElementById('starfield');
+  if (starfield) {
+    const count = window.matchMedia('(min-width: 768px)').matches ? 50 : 28;
+    for (let i = 0; i < count; i++) {
+      const s = document.createElement('span');
+      s.className = 'star';
+      const r = Math.random();
+      if (r < 0.15) s.classList.add('big');
+      else if (r < 0.55) s.classList.add('tiny');
+      s.style.left = Math.random() * 100 + '%';
+      s.style.top  = Math.random() * 100 + '%';
+      s.style.animationDelay    = (Math.random() * 5).toFixed(2) + 's';
+      s.style.animationDuration = (3 + Math.random() * 5).toFixed(2) + 's';
+      starfield.appendChild(s);
+    }
+
+    // gentle parallax
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      let ticking = false;
+      window.addEventListener('scroll', () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          starfield.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+          ticking = false;
+        });
+      }, { passive: true });
+    }
+  }
+
+  // ── Reveal on scroll ──────────────────────────────────────────
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        io.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ── "Lo que necesita el cristiano" — pillars learning module ─
+  const PILLAR_ICONS = {
+    orar: '<svg width="24" height="24" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 14c-3 0-5 2-5 5v8l-6 4v6l6-2v17c0 2 1 3 3 3h4c2 0 3-1 3-3V35l6 2v-6l-6-4v-8c0-3-2-5-5-5z"/><circle cx="32" cy="11" r="3" fill="currentColor" stroke="none"/></svg>',
+    leer:  '<svg width="24" height="24" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 16c8-3 16-3 24 1v36c-8-4-16-4-24-1z"/><path d="M56 16c-8-3-16-3-24 1v36c8-4 16-4 24-1z"/><path d="M32 17v36"/></svg>',
+    test:  '<svg width="24" height="24" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="22" cy="20" r="5"/><path d="M12 52c0-7 4-12 10-12s10 5 10 12"/><circle cx="44" cy="22" r="5"/><path d="M34 52c0-7 4-12 10-12s10 5 10 12"/></svg>',
+  };
+
+  const PILLARS = [
+    {
+      key: 'orar',
+      nombre: 'Orar',
+      subtitulo: 'Hablar con Dios',
+      verse: '"Orad sin cesar."',
+      ref: '1 Tesalonicenses 5:17',
+      intro: 'La oración es el aliento del alma — la conexión viva con tu Padre. Antes de testificar a otros, primero conversa con quien te envía.',
+      howLabel: 'Cómo orar',
+      pasos: [
+        { titulo: 'Adoración', desc: 'Empieza reconociendo quién es Dios: santo, eterno, amante. Antes de pedir, contempla.' },
+        { titulo: 'Confesión', desc: 'Pídele perdón con sinceridad. Él es fiel y justo para perdonar y limpiar.' },
+        { titulo: 'Gratitud',  desc: 'Agradece por sus bendiciones, incluso en lo pequeño. La gratitud abre el corazón.' },
+        { titulo: 'Petición',  desc: 'Presenta tus necesidades, e intercede por otros. Pide con fe, descansa en su voluntad.' },
+      ],
+      versiculos: [
+        { ref: 'Mateo 6:6',         text: '"Tú, cuando ores, entra en tu aposento... a tu Padre que está en secreto."' },
+        { ref: 'Filipenses 4:6-7',  text: '"Por nada estéis afanosos; sean conocidas vuestras peticiones delante de Dios."' },
+        { ref: 'Santiago 5:16',     text: '"La oración eficaz del justo puede mucho."' },
+      ],
+      reflexion: 'Si no oras primero, no tendrás nada que decir. La oración hace al testigo.',
+    },
+    {
+      key: 'leer',
+      nombre: 'Leer la Palabra',
+      subtitulo: 'Alimento diario',
+      verse: '"Lámpara es a mis pies tu palabra, y lumbrera a mi camino."',
+      ref: 'Salmos 119:105',
+      intro: 'La Palabra de Dios ilumina el camino, transforma el corazón, y prepara al obrero para toda buena obra. No puedes dar lo que no has recibido.',
+      howLabel: 'Cómo estudiar la Biblia',
+      pasos: [
+        { titulo: 'Ora antes de leer',  desc: 'Pide al Espíritu Santo que te enseñe lo que necesitas comprender hoy.' },
+        { titulo: 'Lee con atención',   desc: 'Observa qué dice el pasaje, a quién se dirige, en qué contexto fue escrito.' },
+        { titulo: 'Medita',             desc: 'Reflexiona en el versículo durante el día. Memoriza lo que más te impacte.' },
+        { titulo: 'Aplica',             desc: 'Pregunta: ¿qué cambia esto en mi vida hoy? Vive lo que has leído.' },
+      ],
+      versiculos: [
+        { ref: '2 Timoteo 3:16-17', text: '"Toda la Escritura es inspirada por Dios... a fin de que el hombre de Dios sea perfecto."' },
+        { ref: 'Hebreos 4:12',      text: '"La palabra de Dios es viva y eficaz, más cortante que toda espada de dos filos."' },
+        { ref: 'Josué 1:8',         text: '"Nunca se apartará de tu boca este libro de la ley; meditarás en él de día y de noche."' },
+      ],
+      reflexion: 'Llena tu corazón de la Palabra. Cuando rebose, alcanzará a otros sin esfuerzo.',
+    },
+    {
+      key: 'test',
+      nombre: 'Testificar',
+      subtitulo: 'Compartir lo recibido',
+      verse: '"Vosotros sois mis testigos, dice Jehová."',
+      ref: 'Isaías 43:10',
+      intro: 'Testificar no es elocuencia ni argumentación. Es contar con humildad lo que Dios ha hecho en ti — y dejarle al Espíritu Santo la obra de convicción.',
+      howLabel: 'Cómo testificar',
+      pasos: [
+        { titulo: 'Vive el evangelio',     desc: 'Tu vida diaria es tu primer testimonio — más fuerte que tus palabras.' },
+        { titulo: 'Cuenta tu historia',    desc: '"Yo era ciego, ahora veo." Lo que Dios hizo en ti es tu mejor credencial.' },
+        { titulo: 'Usa la Palabra',        desc: 'No tus opiniones — la Biblia. La verdad la confirma el Espíritu, no tú.' },
+        { titulo: 'Confía en el Espíritu', desc: 'Tú siembras y riegas; sólo Dios da el crecimiento. Descansa en eso.' },
+      ],
+      versiculos: [
+        { ref: 'Mateo 28:19-20', text: '"Id, y haced discípulos a todas las naciones... yo estoy con vosotros todos los días."' },
+        { ref: 'Hechos 1:8',     text: '"Recibiréis poder cuando haya venido sobre vosotros el Espíritu Santo, y me seréis testigos."' },
+        { ref: '1 Pedro 3:15',   text: '"Estad siempre preparados para presentar defensa... con mansedumbre y reverencia."' },
+      ],
+      reflexion: 'El testigo prepara el terreno para el método: contacto, confianza, convicción, comisión.',
+    },
+  ];
+
+  const needsNav      = document.getElementById('needsNav');
+  const needsContent  = document.getElementById('needsContent');
+  const needsTabsWrap = document.getElementById('needsTabsWrap');
+  const needsCounter  = document.getElementById('needsCounter');
+  let activePillar = 0;
+
+  // Tab labels — kept short so all three fit the pill at any width.
+  // The full "Leer la Palabra" still appears as the H3 inside the panel.
+  const PILLAR_SHORT = ['Orar', 'Leer', 'Testificar'];
+  const PILLAR_FULL  = ['Orar', 'La Palabra', 'Testificar'];
+
+  PILLARS.forEach((p, i) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'needs-tab' + (i === 0 ? ' is-active' : '');
+    btn.dataset.i = i;
+    btn.setAttribute('role', 'tab');
+    btn.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    btn.setAttribute('aria-label', PILLAR_FULL[i]);
+    btn.innerHTML = `
+      <span class="sm:hidden">${PILLAR_SHORT[i]}</span>
+      <span class="hidden sm:inline">${PILLAR_FULL[i]}</span>
+    `;
+    btn.addEventListener('click', () => setPillar(i));
+    needsNav.appendChild(btn);
+  });
+
+  function renderPillar(i) {
+    const p = PILLARS[i];
+    needsContent.innerHTML = `
+      <p class="needs-panel-verse">${p.verse}</p>
+      <p class="needs-panel-ref">${p.ref}</p>
+      <h3 class="needs-panel-name">${p.nombre}</h3>
+      <p class="needs-panel-intro">${p.intro}</p>
+
+      <div class="needs-section-label">${p.howLabel}</div>
+      <div class="needs-pasos">
+        ${p.pasos.map((s, idx) => `
+          <div class="needs-paso">
+            <div class="needs-paso-num">${String(idx + 1).padStart(2, '0')}</div>
+            <div>
+              <h4 class="needs-paso-titulo">${s.titulo}</h4>
+              <p class="needs-paso-desc">${s.desc}</p>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="needs-section-label">Versículos para meditar</div>
+      <div class="needs-verses">
+        ${p.versiculos.map(v => `
+          <div class="needs-verse-item">
+            <p class="needs-verse-text">${v.text}</p>
+            <span class="needs-verse-ref">${v.ref}</span>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="needs-reflexion">
+        <div class="needs-reflexion-label">Reflexión</div>
+        <p class="needs-reflexion-text">${p.reflexion}</p>
+      </div>
+    `;
+  }
+
+  // Scrolls so the sticky tab bar lines up at the top of viewport.
+  // This guarantees the new panel content starts right below the tabs —
+  // user never has to scroll up to switch topics, never lands in the middle.
+  function scrollTabsToTop() {
+    if (!needsTabsWrap) return;
+    const rect = needsTabsWrap.getBoundingClientRect();
+    const target = window.scrollY + rect.top - 0;
+    window.scrollTo({ top: target, behavior: 'smooth' });
+  }
+
+  function setPillar(i, { instant = false, scroll = true } = {}) {
+    if (i < 0 || i >= PILLARS.length) return;
+    if (i === activePillar && !instant) return;
+    activePillar = i;
+    needsNav.querySelectorAll('.needs-tab').forEach((b, idx) => {
+      b.classList.toggle('is-active', idx === i);
+      b.setAttribute('aria-selected', idx === i ? 'true' : 'false');
+    });
+    if (needsCounter) needsCounter.textContent = String(i + 1);
+
+    if (scroll && !instant) scrollTabsToTop();
+
+    if (instant) { renderPillar(i); return; }
+    needsContent.classList.add('is-leaving');
+    setTimeout(() => {
+      renderPillar(i);
+      requestAnimationFrame(() => needsContent.classList.remove('is-leaving'));
+    }, 220);
+  }
+
+  // Keyboard navigation when the tabs (or panel) are in view
+  document.addEventListener('keydown', (e) => {
+    if (!needsTabsWrap) return;
+    const r = needsTabsWrap.getBoundingClientRect();
+    const inView = r.top < window.innerHeight && r.bottom > 0;
+    if (!inView) return;
+    if (e.key === 'ArrowRight') { e.preventDefault(); setPillar(Math.min(activePillar + 1, PILLARS.length - 1)); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); setPillar(Math.max(activePillar - 1, 0)); }
+  });
+
+  renderPillar(0);
+
+  // ── 4-step navigator ──────────────────────────────────────────
+  const STEPS = [
+    {
+      n: '01',
+      key: 'CONTACTO',
+      subtitle: 'Conectando con personas',
+      quote: 'El Salvador trataba con los hombres como quien deseaba hacerles bien.',
+      quoteSource: 'Ministerio de Curación',
+      intro: 'Jesús se acercaba a la gente donde estaba. Iba al encuentro &mdash; no esperaba que vinieran a él. Hizo del primer paso un acto deliberado de amor.',
+      howLabel: 'Cómo establecer contacto',
+      pasos: [
+        { titulo: 'Sal de tu zona',     desc: 'Frecuenta donde hay personas que necesitan a Jesús.' },
+        { titulo: 'Interés genuino',    desc: 'Pregunta, escucha, observa. Ve con curiosidad amorosa, no con agenda.' },
+        { titulo: 'Sé constante',       desc: 'Un contacto se vuelve relación con el tiempo, no con una visita.' },
+      ],
+      versiculos: [
+        { ref: 'Lucas 19:10', text: '"El Hijo del Hombre vino a buscar y a salvar lo que se había perdido."' },
+        { ref: 'Mateo 9:36',  text: '"Al ver las multitudes, tuvo compasión de ellas; porque estaban desamparadas."' },
+      ],
+      reflexion: 'El primer paso del método de Cristo es siempre el primer paso tuyo hacia el otro.',
+      icon: `<svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 36l10-10 8 8 8-4 8 6 10-8" stroke="#d4a843"/>
+              <path d="M22 40l8-8c1.5-1.5 4-1.5 5.5 0L42 38"/>
+              <path d="M26 44l10-10c1.5-1.5 4-1.5 5.5 0L46 38"/>
+            </svg>`,
+    },
+    {
+      n: '02',
+      key: 'CONFIANZA',
+      subtitle: 'Ganando su confianza',
+      quote: 'Les mostraba simpatía, atendía a sus necesidades y se ganaba su confianza.',
+      quoteSource: 'Ministerio de Curación',
+      intro: 'Sin confianza no hay corazón abierto. Jesús se ganaba la confianza mostrando simpatía, atendiendo necesidades reales, y siendo fiel a su palabra.',
+      howLabel: 'Cómo ganar confianza',
+      pasos: [
+        { titulo: 'Escucha sin juzgar',      desc: 'La mayoría busca ser escuchada antes que corregida.' },
+        { titulo: 'Atiende sus necesidades', desc: 'Alimento, ánimo, compañía. Sé útil antes de hablar de fe.' },
+        { titulo: 'Amor en lo pequeño',      desc: 'La amabilidad cotidiana es un evangelio sin palabras.' },
+      ],
+      versiculos: [
+        { ref: 'Mateo 14:14', text: '"Vio una gran multitud, y tuvo compasión de ellos, y sanó a los enfermos."' },
+        { ref: 'Marcos 1:41', text: '"Y Jesús, teniendo misericordia, extendió la mano y le tocó."' },
+      ],
+      reflexion: 'Te ganas el derecho a hablar de Jesús cuando has demostrado que te importa quien te escucha.',
+      icon: `<svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="32" cy="22" r="6" stroke="#d4a843"/>
+              <path d="M16 50c0-9 7-16 16-16s16 7 16 16"/>
+              <path d="M24 26c2 4 6 6 8 6s6-2 8-6" stroke="#d4a843"/>
+            </svg>`,
+    },
+    {
+      n: '03',
+      key: 'CONVICCIÓN',
+      subtitle: 'Compartir la Palabra',
+      quote: 'Entonces les decía: ‘Seguidme.’',
+      quoteSource: 'Ministerio de Curación',
+      intro: 'Sólo cuando hay confianza, la verdad encuentra hogar. Y el agente de convicción no eres tú &mdash; es el Espíritu Santo, hablando a través de la Palabra.',
+      howLabel: 'Cómo compartir la Palabra',
+      pasos: [
+        { titulo: 'Usa la Biblia, no opiniones', desc: 'Abre el texto y léelo juntos. "Está escrito" pesa más que "yo creo".' },
+        { titulo: 'Pregunta más que afirmes',    desc: 'Jesús enseñaba con preguntas. Permite que el Espíritu hable al corazón.' },
+        { titulo: 'Confía en el Espíritu',       desc: 'Tú siembras y riegas; sólo Dios da el crecimiento.' },
+      ],
+      versiculos: [
+        { ref: 'Juan 16:8',     text: '"Y cuando él venga, convencerá al mundo de pecado, de justicia y de juicio."' },
+        { ref: 'Romanos 10:17', text: '"La fe es por el oír, y el oír, por la palabra de Dios."' },
+      ],
+      reflexion: 'La convicción no se logra; se recibe. Tú abres la puerta — el Espíritu entra.',
+      icon: `<svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 18c8-3 16-3 22 1v34c-6-4-14-4-22-1z"/>
+              <path d="M54 18c-8-3-16-3-22 1v34c6-4 14-4 22-1z"/>
+              <path d="M32 20v34"/>
+              <path d="M30 14l2-6 2 6M28 10h8" stroke="#d4a843"/>
+            </svg>`,
+    },
+    {
+      n: '04',
+      key: 'COMISIÓN',
+      subtitle: 'Traer a otro',
+      quote: 'Por tanto, id, y haced discípulos a todas las naciones.',
+      quoteSource: 'Mateo 28:19-20',
+      intro: 'El método se completa cuando el discípulo formado forma a otros. El ciclo se multiplica: contacto, confianza, convicción, y comisión otra vez.',
+      howLabel: 'Cómo comisionar',
+      pasos: [
+        { titulo: 'Acompaña hasta la decisión', desc: 'Guía al nuevo creyente al bautismo o al compromiso público con Cristo.' },
+        { titulo: 'Enséñale a discipular',      desc: 'Muéstrale el método; ahora él es testigo. Lo que recibió, lo dará.' },
+        { titulo: 'Comienza de nuevo',          desc: 'Busca otro contacto. El ciclo nunca termina mientras haya un alma por alcanzar.' },
+      ],
+      versiculos: [
+        { ref: 'Lucas 10:37',   text: '"Jesús le dijo: Pues ve, y haz tú lo mismo."' },
+        { ref: '2 Timoteo 2:2', text: '"Lo que has oído de mí... encarga a hombres fieles que sean idóneos para enseñar a otros."' },
+      ],
+      reflexion: 'El discípulo que no hace discípulos no ha completado el método. La cosecha es la próxima siembra.',
+      icon: `<svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="24" cy="18" r="5"/>
+              <path d="M16 54c0-9 4-16 8-16M24 36v18"/>
+              <circle cx="42" cy="20" r="4" stroke="#d4a843"/>
+              <path d="M36 54c0-8 3-14 6-14s6 6 6 14" stroke="#d4a843"/>
+              <path d="M28 28l-4 4M28 32l-4-4" stroke="rgba(245,230,200,0.4)"/>
+            </svg>`,
+    },
+  ];
+
+  const stepNav      = document.getElementById('stepNav');
+  const stepPanel    = document.getElementById('stepContent');
+  const counter      = document.getElementById('stepCounter');
+  const prevBtn      = document.getElementById('prevStep');
+  const nextBtn      = document.getElementById('nextStep');
+  const stepTabsWrap = document.getElementById('stepTabsWrap');
+  let current = 0;
+
+  // Build stepper: cell · line · cell · line · cell · line · cell
+  STEPS.forEach((s, i) => {
+    const cell = document.createElement('div');
+    cell.className = 'step-cell flex flex-col items-center';
+    cell.innerHTML = `
+      <button type="button" class="step-btn" role="tab" aria-selected="false" data-i="${i}" aria-label="Paso ${i+1}: ${s.key}">
+        ${i + 1}
+      </button>
+      <div class="step-label">${s.key}</div>
+    `;
+    stepNav.appendChild(cell);
+    if (i < STEPS.length - 1) {
+      const seg = document.createElement('div');
+      seg.className = 'step-line-seg';
+      stepNav.appendChild(seg);
+    }
+  });
+  const cells = [...stepNav.querySelectorAll('.step-cell')];
+  const btns  = [...stepNav.querySelectorAll('.step-btn')];
+  const segs  = [...stepNav.querySelectorAll('.step-line-seg')];
+
+  function renderPanel(i) {
+    const s = STEPS[i];
+    const epigraph = s.quote ? `
+      <div class="step-epigraph">
+        <p class="step-epigraph-text">${s.quote}</p>
+        <p class="step-epigraph-source">${s.quoteSource}</p>
+      </div>
+    ` : '';
+    stepPanel.innerHTML = `
+      ${epigraph}
+      <div class="text-center sm:text-left mb-2">
+        <div class="font-sans text-[13px] tracking-[0.32em] uppercase text-gold/80 mb-2">PASO ${s.n}</div>
+        <h3 class="font-display text-3xl sm:text-4xl text-cream mb-1 tracking-wide">${s.key}</h3>
+        <p class="font-serif italic text-xl text-gold/90 mb-6">${s.subtitle}</p>
+        <p class="needs-panel-intro" style="max-width: none;">${s.intro}</p>
+      </div>
+
+      <div class="needs-section-label">${s.howLabel}</div>
+      <div class="needs-pasos">
+        ${s.pasos.map((p, idx) => `
+          <div class="needs-paso">
+            <div class="needs-paso-num">${String(idx + 1).padStart(2, '0')}</div>
+            <div>
+              <h4 class="needs-paso-titulo">${p.titulo}</h4>
+              <p class="needs-paso-desc">${p.desc}</p>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="needs-section-label">Versículos para meditar</div>
+      <div class="needs-verses">
+        ${s.versiculos.map(v => `
+          <div class="needs-verse-item">
+            <p class="needs-verse-text">${v.text}</p>
+            <span class="needs-verse-ref">${v.ref}</span>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="needs-reflexion">
+        <div class="needs-reflexion-label">Reflexión</div>
+        <p class="needs-reflexion-text">${s.reflexion}</p>
+      </div>
+    `;
+  }
+
+  function scrollStepTabsToTop() {
+    if (!stepTabsWrap) return;
+    const rect = stepTabsWrap.getBoundingClientRect();
+    window.scrollTo({ top: window.scrollY + rect.top, behavior: 'smooth' });
+  }
+
+  function setStep(i, { instant = false, scroll = true } = {}) {
+    if (i < 0 || i >= STEPS.length) return;
+    if (i === current && !instant) return;
+    current = i;
+
+    // nav state
+    cells.forEach((cell, idx) => {
+      const btn = cell.querySelector('.step-btn');
+      btn.classList.toggle('is-active', idx === i);
+      btn.classList.toggle('is-done',   idx <  i);
+      btn.setAttribute('aria-selected', idx === i ? 'true' : 'false');
+      cell.classList.toggle('is-active', idx === i);
+    });
+
+    // mark line segments as done (segment k is between cell k and k+1)
+    segs.forEach((seg, idx) => seg.classList.toggle('is-done', idx < i));
+
+    counter.textContent = String(i + 1);
+    prevBtn.disabled = i === 0;
+    nextBtn.disabled = i === STEPS.length - 1;
+
+    if (scroll && !instant) scrollStepTabsToTop();
+
+    // panel transition
+    if (instant) { renderPanel(i); return; }
+    stepPanel.classList.add('is-leaving');
+    setTimeout(() => {
+      renderPanel(i);
+      requestAnimationFrame(() => stepPanel.classList.remove('is-leaving'));
+    }, 220);
+  }
+
+  btns.forEach(b => b.addEventListener('click', () => setStep(Number(b.dataset.i))));
+  prevBtn.addEventListener('click', () => setStep(current - 1));
+  nextBtn.addEventListener('click', () => setStep(current + 1));
+
+  // Keyboard nav (only when section is in view-ish)
+  document.addEventListener('keydown', (e) => {
+    const r = document.getElementById('pasos').getBoundingClientRect();
+    const visible = r.top < window.innerHeight * 0.8 && r.bottom > 0;
+    if (!visible) return;
+    if (e.key === 'ArrowRight') { e.preventDefault(); setStep(current + 1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); setStep(current - 1); }
+    else if (/^[1-4]$/.test(e.key)) { e.preventDefault(); setStep(Number(e.key) - 1); }
+  });
+
+  setStep(0, { instant: true });
+
+  // ── Evangelismo Modular — 15 módulos, accordion ───────────────
+  // Category palette tuned for legibility on parchment bg
+  const CATS = {
+    fundamento: { label: 'Fundamentos',     color: '#7c5cd6' },
+    profecia:   { label: 'Profecía',        color: '#c08a14' },
+    salvacion:  { label: 'Salvación',       color: '#d14b6a' },
+    ley:        { label: 'Ley y Juicio',    color: '#1e8a5c' },
+    sabado:     { label: 'El Sábado',       color: '#5a7290' },
+    esperanza:  { label: 'Esperanza',       color: '#8a7654' },
+    iglesia:    { label: 'La Iglesia',      color: '#d27a2e' },
+    vida:       { label: 'Vida Cristiana',  color: '#c44848' },
+    llamado:    { label: 'El Llamado',      color: '#2e6fc4' },
+  };
+
+  // 15 módulos — each contains 1-2 lessons (20 lessons total)
+  const MODULOS = [
+    { n: 1, cat: 'fundamento', titulo: 'El Carácter de Dios',
+      intro: 'Conoce quién es Dios: eterno, personal, y profundamente amante. El punto de partida de toda fe.',
+      lecciones: [
+        { n: 1, titulo: 'Lo que la Biblia enseña acerca de Dios',
+          verse: '“Desde el siglo y hasta el siglo, tú eres Dios.”', ref: 'Salmos 90:2' },
+      ] },
+    { n: 2, cat: 'fundamento', titulo: 'La Santa Biblia',
+      intro: 'La Palabra inspirada — autoridad, lámpara, y poder transformador. ¿Cómo leerla y comprenderla?',
+      lecciones: [
+        { n: 2, titulo: 'La Santa Biblia',
+          verse: '“Toda la Escritura es inspirada por Dios.”', ref: '2 Timoteo 3:16' },
+      ] },
+    { n: 3, cat: 'fundamento', titulo: 'La Oración y la Fe',
+      intro: 'Hablar con Dios. Confiar en sus promesas. El puente vivo del cristiano con su Salvador.',
+      lecciones: [
+        { n: 3, titulo: 'Lo que la Biblia enseña acerca de la Oración y la Fe',
+          verse: '“Sin fe es imposible agradar a Dios.”', ref: 'Hebreos 11:6' },
+      ] },
+    { n: 4, cat: 'profecia', titulo: 'La Segunda Venida de Jesús',
+      intro: 'La esperanza bendita: Cristo vuelve. Qué dice la Biblia, y cómo reconocer las señales.',
+      lecciones: [
+        { n: 4, titulo: 'Lo que la Biblia enseña acerca de la Segunda Venida',
+          verse: '“Vendré otra vez, y os tomaré a mí mismo.”', ref: 'Juan 14:3' },
+        { n: 5, titulo: 'Lo que la Biblia enseña acerca de las Señales de la Segunda Venida',
+          verse: '“Cuando veáis todas estas cosas, sabed que está cerca.”', ref: 'Mateo 24:33' },
+      ] },
+    { n: 5, cat: 'salvacion', titulo: 'El Pecado: Origen y Perdón',
+      intro: 'Cómo entró el mal al universo perfecto, y cómo Dios nos restaura por la cruz.',
+      lecciones: [
+        { n: 6, titulo: 'Lo que la Biblia enseña acerca del origen del pecado',
+          verse: '“Y se entabló una gran batalla en el cielo.”', ref: 'Apocalipsis 12:7' },
+        { n: 8, titulo: 'Lo que la Biblia enseña acerca del perdón de los pecados',
+          verse: '“Si confesamos nuestros pecados, él es fiel y justo para perdonarlos.”', ref: '1 Juan 1:9' },
+      ] },
+    { n: 6, cat: 'salvacion', titulo: 'La Salvación',
+      intro: 'El plan de redención: sólo por gracia, sólo por fe, sólo por Cristo.',
+      lecciones: [
+        { n: 7, titulo: 'Lo que la Biblia enseña acerca de la Salvación',
+          verse: '“Por gracia sois salvos por medio de la fe.”', ref: 'Efesios 2:8' },
+      ] },
+    { n: 7, cat: 'ley', titulo: 'El Juicio Divino',
+      intro: 'Cristo como tu abogado en la corte celestial — verdad, justicia, y misericordia.',
+      lecciones: [
+        { n: 9, titulo: 'Lo que la Biblia enseña acerca del Juicio',
+          verse: '“El Anciano de días se sentó… los libros fueron abiertos.”', ref: 'Daniel 7:9-10' },
+      ] },
+    { n: 8, cat: 'ley', titulo: 'La Santa Ley de Dios',
+      intro: 'Los Diez Mandamientos como espejo eterno del carácter de Dios.',
+      lecciones: [
+        { n: 10, titulo: 'Lo que la Biblia enseña acerca de la Santa Ley de Dios',
+          verse: '“La ley de Jehová es perfecta, que convierte el alma.”', ref: 'Salmos 19:7' },
+      ] },
+    { n: 9, cat: 'sabado', titulo: 'El Sábado',
+      intro: 'El día séptimo: señal entre Dios y su pueblo. Cómo descubrir el gozo de guardarlo.',
+      lecciones: [
+        { n: 11, titulo: 'Lo que la Biblia enseña acerca del Día de Descanso',
+          verse: '“Bendijo Dios al día séptimo, y lo santificó.”', ref: 'Génesis 2:3' },
+        { n: 12, titulo: 'Lo que la Biblia enseña acerca de cómo guardar el sábado',
+          verse: '“Llamarás al día de reposo delicia.”', ref: 'Isaías 58:13-14' },
+      ] },
+    { n: 10, cat: 'esperanza', titulo: 'La Muerte y la Esperanza',
+      intro: 'El sueño en Cristo y la gloriosa resurrección — la verdadera esperanza.',
+      lecciones: [
+        { n: 13, titulo: 'Lo que la Biblia enseña acerca de la Muerte',
+          verse: '“Los muertos nada saben.”', ref: 'Eclesiastés 9:5' },
+      ] },
+    { n: 11, cat: 'iglesia', titulo: 'La Iglesia',
+      intro: 'El pueblo remanente de Dios: llamado, guiado, y comisionado en los últimos días.',
+      lecciones: [
+        { n: 14, titulo: 'Lo que la Biblia enseña acerca de la Iglesia',
+          verse: '“Aquí están los que guardan los mandamientos de Dios.”', ref: 'Apocalipsis 14:12' },
+      ] },
+    { n: 12, cat: 'iglesia', titulo: 'El Don de Profecía',
+      intro: 'La voz de Dios a su iglesia en los últimos días, confirmada por la Palabra.',
+      lecciones: [
+        { n: 15, titulo: 'Lo que la Biblia enseña acerca del Don de Profecía',
+          verse: '“El testimonio de Jesús es el espíritu de la profecía.”', ref: 'Apocalipsis 19:10' },
+      ] },
+    { n: 13, cat: 'vida', titulo: 'La Vida Cristiana',
+      intro: 'Vivir reflejando a Cristo: normas, prácticas, y caminar diario con el Maestro.',
+      lecciones: [
+        { n: 16, titulo: 'Lo que la Biblia enseña acerca de las Normas Cristianas',
+          verse: '“Todo lo que es honesto, justo, puro… en esto pensad.”', ref: 'Filipenses 4:8' },
+        { n: 19, titulo: 'Lo que la Biblia enseña acerca de la Vida Cristiana',
+          verse: '“Ya no vivo yo, mas vive Cristo en mí.”', ref: 'Gálatas 2:20' },
+      ] },
+    { n: 14, cat: 'iglesia', titulo: 'El Sostén de la Iglesia',
+      intro: 'Diezmos y ofrendas: el corazón del adorador que devuelve a Dios con gratitud.',
+      lecciones: [
+        { n: 18, titulo: 'Lo que la Biblia enseña acerca del Plan de Dios para el sostén de la Iglesia',
+          verse: '“Traed todos los diezmos al alfolí… probadme ahora en esto.”', ref: 'Malaquías 3:10' },
+      ] },
+    { n: 15, cat: 'llamado', titulo: 'El Bautismo y la Decisión',
+      intro: 'La señal pública de una vida nueva — y la entrega total al Maestro. El paso del discípulo.',
+      lecciones: [
+        { n: 17, titulo: 'Lo que la Biblia enseña acerca del Bautismo',
+          verse: '“Somos sepultados juntamente con él… para que andemos en vida nueva.”', ref: 'Romanos 6:4' },
+        { n: 20, titulo: 'Entregarlo todo',
+          verse: '“Venid a mí todos los que estáis trabajados y cargados.”', ref: 'Mateo 11:28' },
+      ] },
+  ];
+
+  const moduloList = document.getElementById('moduloList');
+  const modFilters = document.getElementById('modFilters');
+  const moduloEmpty = document.getElementById('moduloEmpty');
+
+  // Filter chips
+  const chips = [{ key: 'all', label: 'Todos', color: '#1a1208' }];
+  Object.entries(CATS).forEach(([k, v]) => chips.push({ key: k, label: v.label, color: v.color }));
+  chips.forEach(c => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'chip' + (c.key === 'all' ? ' is-active' : '');
+    b.dataset.cat = c.key;
+    b.style.setProperty('--chip-color', c.color);
+    b.innerHTML = c.key === 'all'
+      ? c.label
+      : `<span class="chip-dot" style="--chip-color:${c.color}"></span>${c.label}`;
+    b.addEventListener('click', () => setFilter(c.key));
+    modFilters.appendChild(b);
+  });
+
+  // Render accordion
+  MODULOS.forEach(m => {
+    const cat = CATS[m.cat];
+    const id = `modulo-body-${m.n}`;
+    const item = document.createElement('div');
+    item.className = 'modulo-item';
+    item.dataset.cat = m.cat;
+    item.style.setProperty('--cat-color', cat.color);
+    const lessonsLabel = m.lecciones.length === 1 ? '1 lección' : `${m.lecciones.length} lecciones`;
+    item.innerHTML = `
+      <button type="button" class="modulo-header" aria-expanded="false" aria-controls="${id}">
+        <span class="modulo-num">${String(m.n).padStart(2, '0')}</span>
+        <div class="modulo-text">
+          <span class="modulo-cat">${cat.label}</span>
+          <h3 class="modulo-title">${m.titulo}</h3>
+        </div>
+        <span class="modulo-lessons">${lessonsLabel}</span>
+        <svg class="modulo-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </button>
+      <div class="modulo-body" id="${id}">
+        <div class="modulo-body-inner">
+          <div class="modulo-body-pad">
+            <p class="modulo-intro">${m.intro}</p>
+            <div class="lecciones">
+              ${m.lecciones.map(l => `
+                <article class="leccion">
+                  <span class="leccion-meta">Lección ${String(l.n).padStart(2, '0')}</span>
+                  <h4 class="leccion-title">${l.titulo}</h4>
+                  <p class="leccion-verse">
+                    ${l.verse}
+                    <span class="leccion-ref">${l.ref}</span>
+                  </p>
+                </article>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    const header = item.querySelector('.modulo-header');
+    header.addEventListener('click', () => {
+      const isOpen = item.classList.toggle('is-open');
+      header.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    moduloList.appendChild(item);
+  });
+
+  function setFilter(cat) {
+    modFilters.querySelectorAll('.chip').forEach(c => c.classList.toggle('is-active', c.dataset.cat === cat));
+    let visibleCount = 0;
+    moduloList.querySelectorAll('.modulo-item').forEach(it => {
+      const match = cat === 'all' || it.dataset.cat === cat;
+      it.classList.toggle('is-muted', !match);
+      it.style.display = match ? '' : 'none';
+      if (match) visibleCount++;
+    });
+    moduloEmpty.classList.toggle('hidden', visibleCount > 0);
+  }
+
+  // ── Video lite-embed ──────────────────────────────────────────
+  const videoFrame = document.getElementById('videoFrame');
+  if (videoFrame) {
+    const play = videoFrame.querySelector('.video-play');
+    play.addEventListener('click', () => {
+      const id = videoFrame.dataset.videoId;
+      videoFrame.innerHTML = `
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1"
+          title="Mensaje en video sobre El Método de Cristo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          style="width:100%; aspect-ratio:16/9; border:0; display:block; background:#000;"
+        ></iframe>
+      `;
+    });
+  }
+
+  // ── Share button ──────────────────────────────────────────────
+  const shareBtn = document.getElementById('shareBtn');
+  if (shareBtn) {
+    const label = shareBtn.querySelector('.cta-link-label');
+    shareBtn.addEventListener('click', async () => {
+      const isLocal = ['localhost', '127.0.0.1', ''].includes(location.hostname);
+      const url = isLocal ? 'https://elmetododecristo.com' : location.href.split('#')[0];
+      const shareData = {
+        title: 'El Método de Cristo',
+        text: 'Contacto · Confianza · Convicción · Comisión — el método que Jesús usó para alcanzar corazones.',
+        url,
+      };
+      try {
+        if (navigator.share && (!navigator.canShare || navigator.canShare(shareData))) {
+          await navigator.share(shareData);
+          return;
+        }
+      } catch (err) {
+        if (err && err.name === 'AbortError') return; // user cancelled
+      }
+      // Fallback: copy to clipboard
+      try {
+        await navigator.clipboard.writeText(url);
+        const original = label.textContent;
+        label.textContent = '✓ Enlace copiado';
+        setTimeout(() => { label.textContent = original; }, 1800);
+      } catch {
+        window.prompt('Copia el enlace:', url);
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
