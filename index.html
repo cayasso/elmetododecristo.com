@@ -57,6 +57,11 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    /* Lock horizontal scrolling on mobile.
+       `clip` is preferred over `hidden` because it doesn't create a new
+       scroll context, so the sticky pill tabs and stepper keep working. */
+    overflow-x: clip;
+    max-width: 100vw;
   }
 
   /* ── Hero background stack ───────────────────────────────────── */
