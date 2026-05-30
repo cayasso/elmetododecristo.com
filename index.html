@@ -601,6 +601,13 @@
     box-shadow: 0 0 0 10px rgba(212,168,67,0.15), 0 0 60px rgba(212,168,67,0.55);
     transition: transform 350ms ease;
   }
+  @media (max-width: 640px) {
+    .video-play-btn {
+      width: 64px; height: 64px;
+      box-shadow: 0 0 0 7px rgba(212,168,67,0.15), 0 0 40px rgba(212,168,67,0.5);
+    }
+    .video-play-btn svg { width: 22px; height: 22px; }
+  }
   .video-play:hover .video-play-btn { transform: scale(1.08); }
 
   /* ── CTA glow button ─────────────────────────────────────────── */
