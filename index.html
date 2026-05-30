@@ -228,9 +228,13 @@
     cursor: pointer;
     transition: all 350ms cubic-bezier(.2,.7,.2,1);
   }
-  @media (max-width: 480px) {
-    .step-btn { width: 46px; height: 46px; font-size: 0.95rem; }
-    .step-line-seg { margin-top: 22px; min-width: 8px; }
+  @media (max-width: 640px) {
+    .step-btn { width: 44px; height: 44px; font-size: 0.95rem; }
+    .step-line-seg { margin-top: 21px; min-width: 8px; }
+    /* On mobile, hide labels under each circle — they crowd into
+       each other and the active step's name is now in the counter
+       line below ("Paso 4 de 4 · Comisión") and the panel header. */
+    .step-label { display: none; }
   }
   .step-btn:hover { color: #f5e6c8; border-color: rgba(212,168,67,0.55); }
   .step-btn.is-done {
@@ -290,23 +294,20 @@
 
   /* ── Three pillars (necesita el cristiano) ───────────────────── */
   /* ── Lo que necesita el cristiano — sticky tabs + learning panel ─ */
-  /* Sticky bar: transparent + backdrop blur so it inherits whichever
-     section it's in (bg-deep / bg-mid). At rest it's invisible; when
-     content scrolls behind it the blur turns it into frosted glass. */
+  /* Sticky bar: solid bg per-section via --sticky-bg CSS variable.
+     - Section using bg-deep (#060d14) → default value works
+     - Section using bg-mid (#0d1b2a) → override with --sticky-bg on wrap
+     The slight transparency + backdrop-blur softens the edge but is
+     opaque enough that panel content scrolling behind it is hidden. */
   .needs-tabs-wrap {
     position: sticky;
     top: 0;
     z-index: 30;
     padding: 14px 0 16px;
     margin-bottom: 28px;
-    background: transparent;
-    -webkit-backdrop-filter: blur(16px) saturate(140%);
-            backdrop-filter: blur(16px) saturate(140%);
-  }
-  /* Fallback for browsers without backdrop-filter: faint tint so scrolled
-     content doesn't visibly show through the sticky bar */
-  @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
-    .needs-tabs-wrap { background: rgba(6, 13, 20, 0.82); }
+    background: var(--sticky-bg, rgba(6, 13, 20, 0.96));
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+            backdrop-filter: blur(20px) saturate(140%);
   }
   .needs-tabs {
     display: flex;
@@ -1029,12 +1030,12 @@
     </div>
 
     <!-- Sticky stepper — always reachable while reading the panel -->
-    <div id="stepTabsWrap" class="needs-tabs-wrap">
+    <div id="stepTabsWrap" class="needs-tabs-wrap" style="--sticky-bg: rgba(13, 27, 42, 0.96);">
       <div id="stepNav" class="stepper" role="tablist" aria-label="Cuatro pasos del método de Cristo">
         <!-- injected: cell · line · cell · line · cell · line · cell -->
       </div>
       <div class="needs-counter">
-        Paso <strong id="stepCounter">1</strong> de 4
+        Paso <strong id="stepCounter">1</strong> de 4 &middot; <span id="stepName" class="text-cream/85">Contacto</span>
       </div>
     </div>
 
@@ -1571,6 +1572,7 @@
   const stepNav      = document.getElementById('stepNav');
   const stepPanel    = document.getElementById('stepContent');
   const counter      = document.getElementById('stepCounter');
+  const stepName     = document.getElementById('stepName');
   const prevBtn      = document.getElementById('prevStep');
   const nextBtn      = document.getElementById('nextStep');
   const stepTabsWrap = document.getElementById('stepTabsWrap');
@@ -1668,6 +1670,10 @@
     segs.forEach((seg, idx) => seg.classList.toggle('is-done', idx < i));
 
     counter.textContent = String(i + 1);
+    if (stepName) {
+      const k = STEPS[i].key;
+      stepName.textContent = k.charAt(0) + k.slice(1).toLowerCase();
+    }
     prevBtn.disabled = i === 0;
     nextBtn.disabled = i === STEPS.length - 1;
 
